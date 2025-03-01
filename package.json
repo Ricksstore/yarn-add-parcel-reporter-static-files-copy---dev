@@ -62,6 +62,11 @@
        "staticOutPath": "vendor"
      }
    }
-   ```
+   ```{
+     "staticFiles": {
+       "staticOutPath": "vendor"
+     }
+   }
 
 This will configure Parcel to copy the static files to the `vendor` directory.
+
