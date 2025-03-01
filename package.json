@@ -29,4 +29,39 @@
     "@parcel/types": "^2.0.0-beta.1",
     "eslint": "5.12.0"
   }
-}
+
+   ```json
+   {
+     "staticFiles": {
+       "staticOutPath": "vendor"
+     }
+   }
+   ```
+
+3. Insert this configuration within your `package.json` file. Typically, it will be added after your `devDependencies`. Here is an example of how it might look:
+
+   ```json
+   {
+     "name": "your-project-name",
+     "version": "1.0.0",
+     "description": "",
+     "scripts": {
+       "clear": "rm -rf ./.parcel-cache dist",
+       "build": "parcel build src/index.html",
+       "serve": "parcel src/index.html",
+       "test": "echo \"Error: no test specified\" && exit 1"
+     },
+     "author": "",
+     "license": "ISC",
+     "devDependencies": {
+       "@parcel/config-default": "2.9.2",
+       "parcel": "2.9.2",
+       "parcel-reporter-static-files-copy": "file:../../"
+     },
+     "staticFiles": {
+       "staticOutPath": "vendor"
+     }
+   }
+   ```
+
+This will configure Parcel to copy the static files to the `vendor` directory.
